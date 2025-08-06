@@ -1,0 +1,7 @@
+{
+    "custom/im":{
+        "format":"󰌌",
+        "tooltip":false,
+        "on-click":"~/Luma/settings/Input-Method.sh"
+    }
+}

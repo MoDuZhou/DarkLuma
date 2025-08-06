@@ -1,0 +1,7 @@
+{
+    "custom/Terminal":{
+        "format":"󰆍",
+        "tooltip":false,
+        "on-click":"~/Luma/settings/Terminal.sh"
+    }
+}

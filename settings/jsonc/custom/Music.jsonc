@@ -1,0 +1,7 @@
+{
+    "custom/Music":{
+        "format":"󰋋",
+        "tooltip":false,
+        "on-click":"~/Luma/settings/Music.sh"
+    }
+}

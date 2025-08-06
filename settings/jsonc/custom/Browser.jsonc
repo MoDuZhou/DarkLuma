@@ -1,0 +1,7 @@
+{
+    "custom/Browser":{
+        "format":"󰈹",
+        "tooltip":false,
+        "on-click":"~/Luma/settings/Browser.sh"
+    }
+}

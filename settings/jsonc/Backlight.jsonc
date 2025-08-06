@@ -1,0 +1,17 @@
+{
+    "backlight": {
+        "format": "{icon}",
+        "format-icons": [
+            "󰪞",
+            "󰪟",
+            "󰪠",
+            "󰪡",
+            "󰪢",
+            "󰪣",
+            "󰪤",
+            "󰪥"
+        ],
+        "scroll-step": 1,
+        "tooltip-format": "Brightness: {percent}%"
+    }
+}

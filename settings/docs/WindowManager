@@ -1,0 +1,288 @@
+#  _   ___   ______  ____  _        _    _   _ ____  
+# | | | \ \ / /  _ \|  _ \| |      / \  | \ | |  _ \ 
+# | |_| |\ V /| |_) | |_) | |     / _ \ |  \| | | | |
+# |  _  | | | |  __/|  _ <| |___ / ___ \| |\  | |_| |
+# |_| |_| |_| |_|   |_| \_\_____/_/   \_\_| \_|____/ 
+#
+
+# ----------------------------------------------------- #
+#                       Monitor                         #
+# ----------------------------------------------------- #
+monitor=eDP-1,2560x1600@120,0x0,1
+# ----------------------------------------------------- #
+#                     Environment                       #
+# ----------------------------------------------------- #
+env=GDK_SCALE,1
+env=XCURSOR_SIZE,24
+env=MOZ_ENABLE_WAYLAND,1
+env=OZONE_PLATFORM,wayland
+env=SDL_VIDEODRIVER,wayland
+env=XDG_SESSION_TYPE,wayland
+env=GDK_BACKEND,wayland,x11,*
+env=QT_QPA_PLATFORMTHEME,qt6ct
+env=QT_QPA_PLATFORMTHEME,qt5ct
+env=QT_QPA_PLATFORM,wayland;xcb
+env=XDG_CURRENT_DESKTOP,Hyprland
+env=XDG_SESSION_DESKTOP,Hyprland
+env=QT_AUTO_SCREEN_SCALE_FACTOR,1
+env=ELECTRON_OZONE_PLATFORM_HINT,wayland
+env=QT_WAYLAND_DISABLE_WINDOWDECORATION,1
+# ----------------------------------------------------- #
+#                      Keyboard                         #
+# ----------------------------------------------------- #
+input:kb_layout=us
+input:sensitivity=0
+input:follow_mouse=1
+input:mouse_refocus=false
+input:numlock_by_default=true
+input:touchpad:scroll_factor=1.0
+input:touchpad:natural_scroll=false
+# ----------------------------------------------------- #
+#                      Autostart                        #
+# ----------------------------------------------------- #
+exec-once=~/Luma/settings/Getpaper.sh
+exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec-once=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec-once=wl-paste --type text --watch cliphist store
+exec-once=wl-paste --type image --watch cliphist store
+exec-once=hyprctl setcursor "Catppuccin Mocha Pink" 20
+exec-once=hyprpaper  & swaync &  waybar
+# ----------------------------------------------------- #
+#                       Window                          #
+# ----------------------------------------------------- #
+general:gaps_in=4
+general:gaps_out=8
+general:border_size=2
+general:layout=dwindle
+general:allow_tearing=false
+general:resize_on_border=true
+general:col.active_border=rgb(ffffff)
+general:col.inactive_border=rgb(a6abc8)
+# ----------------------------------------------------- #
+#                      Decoration                       #
+# ----------------------------------------------------- #
+decoration:rounding=0
+decoration:active_opacity=0.7
+decoration:inactive_opacity=0.7
+decoration:fullscreen_opacity=0.7
+decoration:blur:enabled=true
+decoration:blur:size=6
+decoration:blur:passes=4
+decoration:blur:new_optimizations=on
+decoration:blur:ignore_opacity=true
+decoration:blur:xray=true
+decoration:shadow:enabled=false
+decoration:shadow:range=30
+decoration:shadow:render_power=3
+decoration:shadow:color=0x66000000
+# ----------------------------------------------------- #
+#                         Layout                        #
+# ----------------------------------------------------- #
+dwindle:pseudotile=true
+dwindle:preserve_split=true
+master:new_status=master
+gestures:workspace_swipe=false
+binds:workspace_back_and_forth=true
+binds:allow_workspace_cycles=true
+binds:pass_mouse_when_bound=false
+xwayland:force_zero_scaling=true
+# ----------------------------------------------------- #
+#                         Misc                          #
+# ----------------------------------------------------- #
+misc:disable_hyprland_logo=true
+misc:disable_splash_rendering=true
+misc:initial_workspace_tracking=1 
+# ----------------------------------------------------- #
+#                     WindowRule                        #
+# ----------------------------------------------------- #
+windowrule=tile,title:^(Microsoft-edge)$
+windowrule=tile,title:^(Brave-browser)$
+windowrule=tile,title:^(Chromium)$
+windowrule=float,title:^(pavucontrol)$
+windowrule=float,title:^(blueman-manager)$
+windowrule=float,title:^(nm-connection-editor)$
+windowrule=float,title:^(qalculate-gtk)$
+windowrule=float,title:^(Picture-in-Picture)$
+windowrule=pin,title:^(Picture-in-Picture)$
+windowrule=move 69.5% 4%,title:^(Picture-in-Picture)$
+windowrule=idleinhibit fullscreen,class:([window])
+# Pavucontrol floating
+windowrule=float,class:(.*org.pulseaudio.pavucontrol.*)
+windowrule=size 700 600,class:(.*org.pulseaudio.pavucontrol.*)
+windowrule=center,class:(.*org.pulseaudio.pavucontrol.*)
+windowrule=pin,class:(.*org.pulseaudio.pavucontrol.*)
+# OpenAI ChatGPT floating
+windowrule=float,title:(ChatGPT.*)
+windowrule=float,title:(.*chat.openai.com.*)
+windowrule=size 500 50%,title:(.*chat.openai.com.*)
+windowrule=move 20 70,title:(.*chat.openai.com.*)
+# Waypaper
+windowrule=float,class:(.*waypaper.*)
+windowrule=size 900 700,class:(.*waypaper.*)
+windowrule=center,class:(.*waypaper.*)
+windowrule=pin,class:(.*waypaper.*)
+# SwayNC
+layerrule=blur,swaync-control-center
+layerrule=blur,swaync-notification-window
+layerrule=ignorezero,swaync-control-center
+layerrule=ignorezero,swaync-notification-window
+layerrule=ignorealpha 0.5,swaync-control-center
+layerrule=ignorealpha 0.5,swaync-notification-window
+# Blueman Manager
+windowrule=float,class:(blueman-manager)
+windowrule=size 800 600,class:(blueman-manager)
+windowrule=center,class:(blueman-manager)
+# nwg-look
+windowrule=float,class:(nwg-look)
+windowrule=size 700 600,class:(nwg-look)
+windowrule=move 10% 20%,class:(nwg-look)
+windowrule=pin,class:(nwg-look)
+# nwg-displays
+windowrule=float,class:(nwg-displays)
+windowrule=size 900 600,class:(nwg-displays)
+windowrule=move 10% 20%,class:(nwg-displays)
+windowrule=pin,class:(nwg-displays)
+# System Mission Center
+windowrule=float,class:(io.missioncenter.MissionCenter)
+windowrule=pin,class:(io.missioncenter.MissionCenter)
+windowrule=center,class:(io.missioncenter.MissionCenter)
+windowrule=size 900 600,class:(io.missioncenter.MissionCenter)
+# System Mission Center Preference Window
+windowrule=float,class:(missioncenter),title:^(Preferences)$
+windowrule=pin,class:(missioncenter),title:^(Preferences)$
+windowrule=center,class:(missioncenter),title:^(Preferences)$
+# Gnome Calculator
+windowrule=float,class:(org.gnome.Calculator)
+windowrule=size 700 600,class:(org.gnome.Calculator)
+windowrule=center,class:(org.gnome.Calculator)
+# Emoji Picker Smile
+windowrule=float,class:(it.mijorus.smile)
+windowrule=pin,class:(it.mijorus.smile)
+windowrule=move 100%-w-40 90,class:(it.mijorus.smile)
+# General floating
+windowrule=float,class:(Luma)
+windowrule=size 1000 700,class:(Luma)
+windowrule=center,class:(Luma)
+# Float and center file pickers
+windowrule=float,class:xdg-desktop-portal-gtk,title:^(Open.*Files?|Save.*Files?|All Files|Save)
+windowrule=center,class:xdg-desktop-portal-gtk,title:^(Open.*Files?|Save.*Files?|All Files|Save)
+# ----------------------------------------------------- #
+#                       Animations                      #
+# ----------------------------------------------------- #
+animations:enabled=true
+animations:bezier=linear,0,0,1,1
+animations:bezier=md3_standard,0.2,0,0,1
+animations:bezier=md3_decel,0.05,0.7,0.1,1
+animations:bezier=md3_accel,0.3,0,0.8,0.15
+animations:bezier=overshot,0.05,0.9,0.1,1.1
+animations:bezier=crazyshot,0.1,1.5,0.76,0.92 
+animations:bezier=hyprnostretch,0.05,0.9,0.1,1.0
+animations:bezier=menu_decel,0.1,1,0,1
+animations:bezier=menu_accel,0.38,0.04,1,0.07
+animations:bezier=easeInOutCirc,0.85,0,0.15,1
+animations:bezier=easeOutCirc,0,0.55,0.45,1
+animations:bezier=easeOutExpo,0.16,1,0.3,1
+animations:bezier=softAcDecel,0.26,0.26,0.15,1
+animations:bezier=md2,0.4,0,0.2,1
+animations:animation=windows,1,3,md3_decel,popin 60%
+animations:animation=windowsIn,1,3,md3_decel,popin 60%
+animations:animation=windowsOut,1,3,md3_accel,popin 60%
+animations:animation=border,1,10,default
+animations:animation=fade,1,3,md3_decel
+animations:animation=layers,1,2,md3_decel,slide
+animations:animation=layersIn,1,3,menu_decel,slide
+animations:animation=layersOut,1,1.6,menu_accel
+animations:animation=fadeLayersIn,1,2,menu_decel
+animations:animation=fadeLayersOut,1,4.5,menu_accel
+animations:animation=workspaces,1,7,menu_decel,slide
+animations:animation=workspaces,1,2.5,softAcDecel,slide
+animations:animation=workspaces,1,7,menu_decel,slidefade 15%
+animations:animation=specialWorkspace,1,3,md3_decel,slidefadevert 15%
+animations:animation=specialWorkspace,1,3,md3_decel,slidevert
+# ----------------------------------------------------- #
+#                       Keybinding                      #
+# ----------------------------------------------------- #
+# super key
+$mainMod=SUPER
+# application
+bind=$mainMod,RETURN,exec,~/Luma/settings/Terminal.sh
+bind=$mainMod,B,exec,~/Luma/settings/Browser.sh
+bind=$mainMod,E,exec,~/Luma/settings/FileManager.sh
+bind=$mainMod,D,exec,~/Luma/settings/Launcher.sh
+# window
+bind=$mainMod,Q,killactive
+bind=$mainMod SHIFT,Q,exec,hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill
+bind=$mainMod CTRL,Q,exit
+bind=$mainMod CTRL,R,exec,hyprctl reload
+bind=$mainMod,M,fullscreen,1
+bind=$mainMod,SPACE,togglefloating
+bind=$mainMod SHIFT,SPACE,workspaceopt,allfloat
+bind=$mainMod,T,togglesplit
+bind=$mainMod,S,swapsplit
+bind=$mainMod CTRL,S,exec,hyprshot --mode region --output-folder ~/Pictures
+bind=$mainMod,H,movefocus,l
+bind=$mainMod,L,movefocus,r 
+bind=$mainMod,J,movefocus,d
+bind=$mainMod,K,movefocus,u 
+bind=$mainMod,LEFT,movefocus,l                                        
+bind=$mainMod,RIGHT,movefocus,r                                    
+bind=$mainMod,DOWN,movefocus,d                                  
+bind=$mainMod,UP,movefocus,u
+bind=$mainMod SHIFT,H,resizeactive,-100 0
+bind=$mainMod SHIFT,L,resizeactive,100 0    
+bind=$mainMod SHIFT,J,resizeactive,0 100
+bind=$mainMod SHIFT,K,resizeactive,0 -100
+bind=$mainMod SHIFT,LEFT,resizeactive,-100 0                                                   
+bind=$mainMod SHIFT,RIGHT,resizeactive,100 0                
+bind=$mainMod SHIFT,DOWN,resizeactive,0 100            
+bind=$mainMod SHIFT,UP,resizeactive,0 -100 
+bind=$mainMod ALT,H,swapwindow,l           
+bind=$mainMod ALT,L,swapwindow,r
+bind=$mainMod ALT,J,swapwindow,d  
+bind=$mainMod ALT,K,swapwindow,u
+bind=$mainMod ALT,LEFT,swapwindow,l                                                        
+bind=$mainMod ALT,RIGHT,swapwindow,r
+bind=$mainMod ALT,UP,swapwindow,u
+bind=$mainMod ALT,DOWN,swapwindow,d
+bindm=$mainMod,mouse:272,movewindow                                                        
+bindm=$mainMod,mouse:273,resizewindow                                                      
+binde=ALT,Tab,cyclenext                                                                  
+binde=ALT,Tab,bringactivetotop
+bind=$mainMod,1,workspace,1                                                               
+bind=$mainMod,2,workspace,2                                                               
+bind=$mainMod,3,workspace,3                                                               
+bind=$mainMod,4,workspace,4                                                               
+bind=$mainMod,5,workspace,5                                                               
+bind=$mainMod,6,workspace,6                                                               
+bind=$mainMod,7,workspace,7                                                               
+bind=$mainMod,8,workspace,8                                                               
+bind=$mainMod,9,workspace,9                                                               
+bind=$mainMod,0,workspace,10                                                              
+bind=$mainMod SHIFT,1,movetoworkspace,1                                                   
+bind=$mainMod SHIFT,2,movetoworkspace,2                                                   
+bind=$mainMod SHIFT,3,movetoworkspace,3                                                   
+bind=$mainMod SHIFT,4,movetoworkspace,4                                                   
+bind=$mainMod SHIFT,5,movetoworkspace,5                                                   
+bind=$mainMod SHIFT,6,movetoworkspace,6                                                   
+bind=$mainMod SHIFT,7,movetoworkspace,7                                                   
+bind=$mainMod SHIFT,8,movetoworkspace,8                                                   
+bind=$mainMod SHIFT,9,movetoworkspace,9                                                   
+bind=$mainMod SHIFT,0,movetoworkspace,10                                                  
+bind=$mainMod CTRL,1,exec,~/Luma/scripts/moveTo.sh 1                               
+bind=$mainMod CTRL,2,exec,~/Luma/scripts/moveTo.sh 2                               
+bind=$mainMod CTRL,3,exec,~/Luma/scripts/moveTo.sh 3                               
+bind=$mainMod CTRL,4,exec,~/Luma/scripts/moveTo.sh 4                               
+bind=$mainMod CTRL,5,exec,~/Luma/scripts/moveTo.sh 5                               
+bind=$mainMod CTRL,6,exec,~/Luma/scripts/moveTo.sh 6                               
+bind=$mainMod CTRL,7,exec,~/Luma/scripts/moveTo.sh 7                               
+bind=$mainMod CTRL,8,exec,~/Luma/scripts/moveTo.sh 8                               
+bind=$mainMod CTRL,9,exec,~/Luma/scripts/moveTo.sh 9                               
+bind=$mainMod CTRL,0,exec,~/Luma/scripts/moveTo.sh 10
+bind=,code:238,exec,brightnessctl -d smc::kbd_backlight s +10                  
+bind=,code:237,exec,brightnessctl -d smc::kbd_backlight s 10-                  
+bindel=,XF86AudioRaiseVolume,exec,wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 10%+    
+bindel=,XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-    
+bindel=,XF86AudioMute,exec,wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle           
+bindel=,XF86AudioMicMute,exec,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle      
+bindel=,XF86MonBrightnessUp,exec,brightnessctl s 5%+                            
+bindel=,XF86MonBrightnessDown,exec,brightnessctl s 5%-

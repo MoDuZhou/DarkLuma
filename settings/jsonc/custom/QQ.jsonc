@@ -1,0 +1,7 @@
+{
+    "custom/QQ":{
+        "format":"󰘅",
+        "tooltip":false,
+        "on-click":"~/Luma/settings/QQ.sh"
+    }
+}

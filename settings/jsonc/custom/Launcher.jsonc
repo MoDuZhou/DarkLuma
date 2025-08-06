@@ -1,0 +1,7 @@
+{
+    "custom/Launcher":{
+        "format":"󰣇",
+        "tooltip":false,
+        "on-click":"~/Luma/settings/Launcher.sh"
+    }
+}

@@ -1,0 +1,52 @@
+* {
+    border: none;
+    font-size: 30px;
+    font-family: "JetBrainsMono Nerd Font Mono";
+    border-radius: 0;
+}
+window#waybar {
+    color: #ffffff;
+    background-color: #000000;
+}
+window#waybar.left {
+    padding: 4px 0;
+}
+.modules-left > widget > * {
+    margin: 2px;
+    padding: 10px 0;
+    min-width: 48px;
+    background: linear-gradient(to bottom,#303030,#000000);
+}
+.modules-center > widget > * {
+    margin: 2px;
+    padding: 6px 0;
+    min-width: 48px;
+}
+.modules-right > widget > * {
+    margin: 2px;
+    padding: 10px 0;
+    min-width: 48px;
+    background: linear-gradient(to bottom,#303030,#000000);
+}
+#custom-Launcher,
+#custom-Video,
+#custom-Filemanager,
+#custom-Terminal,
+#custom-WeChat,
+#custom-Music,
+#custom-Browser,
+#custom-Calculator,
+#custom-Store,
+#custom-QQ
+#custom-Wallpaper,
+#cpu,
+#bluetooth,
+#backlight,
+#pulseaudio,
+#network,
+#custom-Cliphist,
+#custom-im,
+#clock,
+#custom-Logout {
+    color: #ffffff;
+}

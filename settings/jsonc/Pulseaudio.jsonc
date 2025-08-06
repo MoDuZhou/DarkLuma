@@ -1,0 +1,22 @@
+{
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
+        "format-bluetooth-muted": "󰖁",
+        "format-muted": "󰖁",
+        "format-source": "",
+        "format-source-muted": "󰖁",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "tooltip-format": "Vol: {volume}%\nSink: {desc}\nSource: {source_desc}",
+        "on-click": "~/Luma/settings/Audio.sh"
+    }
+}

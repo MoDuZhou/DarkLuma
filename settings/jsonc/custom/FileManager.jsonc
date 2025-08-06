@@ -1,0 +1,7 @@
+{
+    "custom/Filemanager":{
+        "format":"󰉖",
+        "tooltip":false,
+        "on-click":"~/Luma/settings/FileManager.sh"
+    }
+}

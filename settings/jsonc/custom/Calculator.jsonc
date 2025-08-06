@@ -1,0 +1,7 @@
+{
+    "custom/Calculator":{
+        "format":"󰇃",
+        "tooltip":false,
+        "on-click":"~/Luma/settings/Calculator.sh"
+    }
+}

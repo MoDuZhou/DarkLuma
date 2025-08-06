@@ -1,0 +1,7 @@
+{
+    "custom/Video":{
+        "format":"󰐋",
+        "tooltip":false,
+        "on-click":"~/Luma/settings/Video.sh"
+    }
+}
