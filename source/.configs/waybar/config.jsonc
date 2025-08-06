@@ -1,0 +1,58 @@
+{
+    "layer": "top",
+    "margin-bottom": 0,
+    "spacing": 0,
+    "height": 1600,
+    "width": 60,
+    "position": "left",
+    "include":[
+        "~/Luma/settings/jsonc/CPU.jsonc",
+        "~/Luma/settings/jsonc/Clock.jsonc",
+        "~/Luma/settings/jsonc/Window.jsonc",
+        "~/Luma/settings/jsonc/Network.jsonc",
+        "~/Luma/settings/jsonc/custom/QQ.jsonc",
+        "~/Luma/settings/jsonc/custom/im.jsonc",
+        "~/Luma/settings/jsonc/Backlight.jsonc",
+        "~/Luma/settings/jsonc/Bluetooth.jsonc",
+        "~/Luma/settings/jsonc/Pulseaudio.jsonc",
+        "~/Luma/settings/jsonc/custom/Video.jsonc",
+        "~/Luma/settings/jsonc/custom/Store.jsonc",
+        "~/Luma/settings/jsonc/custom/Music.jsonc",
+        "~/Luma/settings/jsonc/custom/WeChat.jsonc",
+        "~/Luma/settings/jsonc/custom/Logout.jsonc",
+        "~/Luma/settings/jsonc/custom/Browser.jsonc",
+        "~/Luma/settings/jsonc/custom/Cliphist.jsonc",
+        "~/Luma/settings/jsonc/custom/Launcher.jsonc",
+        "~/Luma/settings/jsonc/custom/Terminal.jsonc",
+        "~/Luma/settings/jsonc/custom/Weather.jsonc",
+        "~/Luma/settings/jsonc/custom/Calculator.jsonc",
+        "~/Luma/settings/jsonc/custom/FileManager.jsonc"
+    ],
+    "modules-left":[
+        "custom/Launcher",
+        "custom/Video",
+        "custom/Filemanager",
+        "custom/Terminal",
+        "custom/WeChat",
+        "custom/Music",
+        "custom/Browser",
+        "custom/Calculator",
+        "custom/Store",
+        "custom/QQ"
+    ],
+    "modules-center":[
+        "hyprland/window"
+    ],
+    "modules-right":[
+        "custom/Weather",
+        "cpu",
+        "bluetooth",
+        "backlight",
+        "pulseaudio",
+        "network",
+        "custom/Cliphist",
+        "custom/im",
+        "clock",
+        "custom/Logout"
+    ]
+}
