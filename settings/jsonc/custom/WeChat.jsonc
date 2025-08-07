@@ -1,7 +1,0 @@
-{
-    "custom/WeChat":{
-        "format":"󰘑",
-        "tooltip":false,
-        "on-click":"~/Luma/settings/WeChat.jsonc"
-    }
-}

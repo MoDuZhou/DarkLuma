@@ -1,6 +1,0 @@
-{
-    "cpu": {
-        "format": "",
-        "on-click": "~/Luma/settings/System-Monitor.sh"
-    }
-}

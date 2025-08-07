@@ -1,7 +1,0 @@
-{
-    "custom/Logout":{
-        "format":"󰍁",
-        "tooltip":false,
-        "on-click":"~/Luma/scripts/wlogout.sh"
-    }
-}

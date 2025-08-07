@@ -1,7 +1,0 @@
-{
-    "custom/Weather":{
-        "format":"󰋩",
-        "tooltip":false,
-        "on-click":"~/Luma/settings/Weather.sh"
-    }
-}

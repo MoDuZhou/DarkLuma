@@ -1,7 +1,0 @@
-{
-    "clock":{
-        "format":"󰸗",
-        "tooltip":false,
-        "on-click":"~/Luma/settings/Calendar.sh"
-    }
-}

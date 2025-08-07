@@ -1,7 +1,0 @@
-{
-    "custom/Store":{
-        "format":"󰒚",
-        "tooltip":false,
-        "on-click":"~/Luma/settings/Store.sh"
-    }
-}
